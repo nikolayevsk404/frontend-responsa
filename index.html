@@ -108,6 +108,8 @@
 
       <button onclick="comprimirImagem()">Comprimir Imagem</button>
 
+      <button onclick="baixarImagem()">Baixar Imagem</button>
+
       <input
         type="text"
         id="cpfInput"
@@ -251,6 +253,13 @@
         } catch (error) {
           console.error(error);
         }
+      }
+
+      function baixarImagem() {
+        const link = document.createElement("a");
+        link.download = "imagem.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
       }
     </script>
 
